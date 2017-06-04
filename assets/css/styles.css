@@ -1,0 +1,48 @@
+@font-face {
+  font-family: ConduitMedium;
+  src: url('../fonts/Conduit ITC/ConduitITC-Medium.otf');
+}
+
+@font-face {
+  font-family: RoswellFour;
+  src: url('../fonts/Roswell/RoswellFourITCStd.otf');
+}
+
+#backgrounds {
+  position: absolute;
+  width: auto;
+}
+
+#backgrounds .visible-xs {
+  height: 1327px;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+#bg-360-top {
+  z-index: 0
+}
+
+#bg-360-mid {
+  position: relative;
+  top: -243px;
+  z-index: -1;
+}
+
+#bg-360-bottom {
+  position: relative;
+  top: -262px;
+}
+
+#text1-360 {
+  font-family: RoswellFour;
+  font-size: 53px;
+  line-height: 52px;
+}
+
+#text2-360 {
+  font-family: ConduitMedium;
+  font-size: 19px;
+}
