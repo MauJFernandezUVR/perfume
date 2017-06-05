@@ -6,8 +6,137 @@
     <link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <title></title>
+    <script src="assets/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+    <script src="assets/css/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body class="center-block">
+
+    <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_success">
+      Launch demo modal
+    </button> -->
+
+    <!-- Success -->
+    <div class="modal fade" id="modal_success" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="psd/close2.png" alt=""></button>
+          </div>
+          <div class="modal-body">
+            <br><br><br>
+            <img src="psd/jeanpaulgaultierform.png" class="center-block" alt="">
+            <br><br>
+            <span id="text-success">¡Muchas Gracias!
+              A la brevedad recibirás un e-mail para coordinar la entrega del Voucher para retirar entradas para ver la película.
+              Además ya estas participando del concurso para ganar el viaje a Atenas y los kits de productos.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fail -->
+    <div class="modal fade" id="modal_fail" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="psd/close2.png" alt=""></button>
+          </div>
+          <div class="modal-body">
+            <br><br><br>
+            <img src="psd/jeanpaulgaultierform.png" class="center-block" alt="">
+            <br><br>
+            <span id="text-success">¡Muchas Gracias!
+              Lamentablemente los cupos de las entradas ya se han agotado! De todas maneras seguís participando del concurso para ganar el viaje a Atenas y los kits de productos.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="modal fade" id="modal_form" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:black">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><img src="psd/close.png" alt=""></button>
+            <h4 class="modal-title" id="formTitle">DATOS DEL CONCURSANTE</h4>
+          </div>
+          <div class="modal-body">
+            <form name="formParticipar" method="post" id="form_participar" class="form-horizontal" style="">
+              <h3 class="tp-label formTextHeader">COMPLETÁ TUS DATOS PARA PARTICIPAR DEL CONCURSO</h3>
+
+              <label class="formText" for="tratamiento">Tratamiento</label>
+              <select id="form_tratamiento" name="tratamiento" class="form-control formText" style="height:50px;">
+                <option value=""></option>
+                <option value="Sr">Sr</option>
+                <option value="Sra">Sra</option>
+              </select><br>
+
+              <input type="text" id="form_nombre" name="nombre" required="required" class="form-control form-control formText" placeholder="NOMBRE*"><br>
+
+              <input type="text" id="form_apellido" name="apellido" required="required" class="form-control form-control formText" placeholder="APELLIDO*"><br>
+
+              <input type="text" id="form_dni" name="dni" required="required" class="form-control form-control formText" placeholder="DNI*"><br>
+
+              <input type="email" id="form_email" name="email" required="required" class="form-control form-control formText" placeholder="CORREO ELECTRÓNICO*"><br>
+
+              <input type="text" id="form_telefono" name="telefono" required="required" class="form-control form-control formText" help="" placeholder="NÚMERO DE TELÉFONO*"><br>
+
+              <input type="text" id="form_fechaNacimiento" name="fechaNacimiento" required="required" class="datepicker form-control form-control formText" placeholder="FECHA NACIMIENTO*"><br>
+
+              <input type="text" id="form_pais" name="pais" required="required" class="form-control form-control formText" help="" placeholder="PAÍS*"><br>
+
+              <label class="formText" for="lenguaje">Lenguaje</label>
+              <select id="form_lenguaje" name="lenguaje" class="form-control formText" style="height:50px;">
+                <option value=""></option>
+                <option value="Español" selected="selected">Español</option>
+                <option value="Inglés">Inglés</option>
+                <option value="Portugués">Portugués</option>
+              </select><br>
+
+              <label class="formText" for="numeroLote">Número de lote</label>
+              <input type="text" id="form_numeroLote" name="numeroLote" class="form-control form-control formText" placeholder="5 NÚMEROS GRABADOS EN LA BASE DE LA LATA Y/O FRASCO"><br>
+
+              <label class="formText" for="superheroe">SI FUERAS UN SÚPER HÉROE, ¿CUÁL SERÍA TU SÚPER PODER Y PARA QUE LO USARÍAS?</label>
+              <input type="text" id="form_superheroe" name="superheroe" class="form-control form-control formText"><br>
+
+              <div class="form-inline">
+                <label class="formText">QUIERO RECIBIR NOVEDADES DE LA MARCA</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label class="checkbox-inline formText" style="padding-top:0">
+                  <input type="checkbox" id="form_novedades_moda" name="novedades_moda" value="Moda">MODA
+                </label>
+                <label class="checkbox-inline formText" style="padding-top:0">
+                  <input type="checkbox" id="form_novedades_moda" name="novedaes_fragancias" value="Fragancias">FRAGANCIAS
+                </label>
+              </div>
+
+              <div class="checkbox">
+                <label class="required formText">
+                  <input type="checkbox" id="form_condiciones" name="condiciones" required="required" class="checkbox formText" value="1">
+                  ACEPTO LA POLÍTICA DE PROTECCIÓN DE DATOS DISPONIBLE EN LAS <a href="#" data-toggle="modal" data-target="#gcModal">CONDICIONES GENERALES</a>
+                </label>
+              </div>
+
+              <div class="checkbox">
+                <label class="required formText">
+                  <input type="checkbox" id="form_bases" name="bases" required="required" class="checkbox formText" value="1">
+                  ACEPTO LAS <a href="#" data-toggle="modal" data-target="#tosModal">BASES Y CONDICIONES</a> DEL CONCURSO
+                </label>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <button type="submit" id="form_submit" name="submit" class="btn btn-lg btn formText" style="margin-top:15px;width:100%;">OK</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container-fluid">
 
       <div id="backgrounds">

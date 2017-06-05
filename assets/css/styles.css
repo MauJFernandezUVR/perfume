@@ -8,6 +8,11 @@
   src: url('../fonts/Roswell/RoswellFourITCStd.otf');
 }
 
+@font-face {
+  font-family: RoswellFourForm;
+  src: url('../fonts/Roswell/RoswellFourITCStd.otf');
+}
+
 .noPadding {
   padding: 0;
 }
@@ -89,4 +94,53 @@
   font-family: ConduitMedium;
   font-size: 36px;
   line-height: 50px;
+}
+
+#formTitle {
+  font-family: RoswellFourForm;
+  font-size: 39px;
+  line-height: 20px;
+  color: white;
+}
+
+.formText {
+  font-family: RoswellFourForm;
+  font-size: 20px;
+  color: black;
+}
+
+.formTextHeader {
+  font-family: RoswellFourForm;
+  font-size: 18px;
+  color: black;
+}
+
+input[type='checkbox'] {
+  -ms-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
+
+input[type='text'], input[type='email'] {
+  height: 50px;
+}
+
+#form_submit {
+  color: white;
+  background-color: black;
+}
+
+#text-success {
+  font-family: RoswellFour;
+  font-size: 107px;
+  line-height: 106px;
+  color: black;
+  text-transform: uppercase;
+}
+
+.modal-content  {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
 }
